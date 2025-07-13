@@ -1,5 +1,3 @@
-// https://replit.com/join/nnvgfvafdy-qureshiashir200
-
 abstract class Temperature {
     private double temp;
 
