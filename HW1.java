@@ -1,5 +1,3 @@
-// https://replit.com/join/zzcaqsyxko-qureshiashir200
-
 class Degrees {
   private double degrees;
 
