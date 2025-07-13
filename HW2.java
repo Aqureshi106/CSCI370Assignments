@@ -1,5 +1,3 @@
-// https://replit.com/join/zyvrzqrbrf-qureshiashir200
-
 abstract class Degrees {
   private final double degrees;
 
