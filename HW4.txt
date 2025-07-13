@@ -1,0 +1,43 @@
+// https://replit.com/join/pxiguniewf-qureshiashir200
+
+/* I have given you the Monty Hall code on Brightspace, under Code.
+
+Write functioning Unit Tests for the SwitchingPlayer. You want to test that, when the player selects the first door:
+
+1. It should be a door index in the range of 0 to 2 inclusive
+2. The door the player has selected is one that was closed beforehand
+And, when the player selects the second door:
+
+1. It should be a door index in the range of 0 to 2 inclusive
+2. The door the player has selected is one that was closed beforehand
+3. It should not be the same selection as the first selection */
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class SwitchingPlayerUnitTest {
+  @Test 
+  public void testFirstChoiceIsValidAndClosed() {
+    GameshowHost host = new GameshowHost();
+    SwitchingPlayer player = new SwitchingPlayer(host);
+    player.selectFirstTime();
+    int firstChoice = player.selection;
+    Door[] doors = host.getDoors();
+    assertTrue(firstChoice >= 0 && firstChoice <= 2);
+    assertFalse(doors[firstChoice].isOpen());
+  }
+
+  public void testSecondChoiceIsValidAndClosed() {
+    GameshowHost host = new GameshowHost();
+    SwitchingPlayer player = new SwitchingPlayer(host);
+    player.selectFirstTime();
+    int firstChoice = player.selection;
+    host.hearFirstSelection(firstChoice);
+    player.selectSecondTime();
+    int secondChoice = player.selection;
+    Door[] doors = host.getDoors();
+    assertTrue(secondChoice >= 0 && secondChoice <= 2);
+    assertFalse(doors[secondChoice].isOpen());
+    assertNotEquals(firstChoice, secondChoice);
+  }
+}
