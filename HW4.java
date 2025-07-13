@@ -1,17 +1,3 @@
-// https://replit.com/join/pxiguniewf-qureshiashir200
-
-/* I have given you the Monty Hall code on Brightspace, under Code.
-
-Write functioning Unit Tests for the SwitchingPlayer. You want to test that, when the player selects the first door:
-
-1. It should be a door index in the range of 0 to 2 inclusive
-2. The door the player has selected is one that was closed beforehand
-And, when the player selects the second door:
-
-1. It should be a door index in the range of 0 to 2 inclusive
-2. The door the player has selected is one that was closed beforehand
-3. It should not be the same selection as the first selection */
-
 import org.junit.Test;
 import static org.junit.Assert.*;
 
